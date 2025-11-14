@@ -34,4 +34,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./Da\ VincixCode/dist
           destination_dir: DaVincixCode
-          user_name: 'github-actions[bot]'
+          user_name: CarlosGonzalez086
+          user_email: DaVincixCode@noreply.github.com
