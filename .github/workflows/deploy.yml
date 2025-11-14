@@ -32,7 +32,39 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./Da\ VincixCode/dist
+          publish_dir: ./Da VincixCode/dist
           destination_dir: DaVincixCode
           user_name: CarlosGonzalez086
           user_email: DaVincixCode@noreply.github.com
+          commit_message: "Deploy DaVincixCode to GitHub Pages"
+          keep_files: false
+          force_orphan: true
+          clean: true
+          single_commit: true
+          verbose: true
+          cname: false
+          allow_empty_commit: false
+          dotfiles: false
+          fqdn: false
+          skip_no_build: false
+          enable_jekyll: false
+          custom_domain: false
+          exclude_assets: ''
+          publish_branch: gh-pages
+          external_repository: ''
+          external_branch: main
+          external_dir: ''
+          ssh_private_key: ''
+          ssh_known_hosts: ''
+          ssh_strict: true
+          git_config_name: ''
+          git_config_email: ''
+          action: deploy
+          tags: false
+          dry_run: false
+          git_remote_url: ''
+          git_remote_name: origin
+          git_author_name: GitHub Actions
+          git_author_email: DaVincixCode@noreply.github.com
+          commit_date: ''
+          nojekyll: false
