@@ -32,8 +32,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: "./DaVincixCode/dist"
-          publish_branch: gh-pages          
+          publish_dir: "./DaVincixCode/dist"  
           destination_dir: DaVincixCode
           user_name: CarlosGonzalez086
           user_email: DaVincixCode@noreply.github.com
