@@ -8,49 +8,23 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Show Node & npm versions
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-      - name: Print versions
-        run: |
-          node -v
-          npm -v
-          echo "Working dir: $(pwd)"
-          ls -la
+          node-version: 18
 
-      - name: Install dependencies (tries npm ci, falls back to npm install)
-        run: |
-          if [ -f package-lock.json ]; then
-            echo "Found package-lock.json -> running npm ci"
-            npm ci
-          else
-            echo "No package-lock.json -> running npm install"
-            npm install
-          fi
-
-      - name: List node_modules and project files
-        run: |
-          ls -la
-          ls -la node_modules || true
-          cat package.json
+      - name: Install dependencies
+        run: npm ci
 
       - name: Build
-        run: |
-          npm run build
-        # si falla aquí verás el error exacto en el log
+        run: npm run build
 
-      - name: Show dist contents (diagnóstico)
-        run: |
-          echo "dist exists?"
-          ls -la dist || true
-          du -sh dist || true
-
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
