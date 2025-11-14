@@ -1,4 +1,4 @@
-# .github/workflows/pages-vite.yml
+# Workflow: Deploy Vite site to GitHub Pages
 name: Deploy Vite site to GitHub Pages
 
 on:
@@ -37,9 +37,9 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
-        # Ajusta 'dist' si tu build pone los archivos en otra carpeta (ej. ./public)
         uses: actions/upload-pages-artifact@v3
         with:
+          # Ajusta esta ruta si tu build genera otro directorio (por ejemplo: ./public)
           path: ./dist
 
   deploy:
