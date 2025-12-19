@@ -11,7 +11,7 @@ const HomeContact = () => {
       <div className="mt-5 w-100">
         <div className="row w-100 align-items-center">
           {/* COLUMNA TEXTO */}
-          <div className="col-lg-5 col-md-6 col-sm-12">
+          <div className="col-lg-5 col-md-6 col-sm-12 p-3">
             <div className="h-100 d-flex align-items-center">
               <h2 className="alata-small m-0">
                 ¿Tienes preguntas o deseas obtener más información sobre
@@ -25,7 +25,7 @@ const HomeContact = () => {
           </div>
 
           {/* COLUMNA FORM — PEGADA A LA DERECHA */}
-          <div className="col-lg-5 col-md-6 col-sm-12 ms-auto">
+          <div className="col-lg-5 col-md-6 col-sm-12 ms-auto p-3">
             <div className="d-flex justify-content-end">
               <ContactForm />
             </div>

@@ -43,6 +43,8 @@ const ContactForm: React.FC = () => {
     message: "",
   });
 
+  const [isSending, setIsSending] = useState<boolean>(false);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -50,8 +52,28 @@ const ContactForm: React.FC = () => {
   };
 
   const handleSubmit = async (e: FormEvent) => {
+    setIsSending(true);
     e.preventDefault();
-
+    if (form.email == null || form.email == "") {
+      Swal.fire({
+        icon: "warning",
+        title: "Falta información",
+        text: "Por favor, ingresa tu correo electrónico para que podamos responderte.",
+        confirmButtonText: "Entendido",
+        confirmButtonColor: "#111827",
+      });
+      return;
+    }
+    if (form.message == null || form.message == "") {
+      Swal.fire({
+        icon: "warning",
+        title: "Mensaje requerido",
+        text: "Por favor, escribe tu mensaje para que podamos ayudarte mejor.",
+        confirmButtonText: "Entendido",
+        confirmButtonColor: "#111827",
+      });
+      return;
+    }
     try {
       await send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -88,26 +110,11 @@ const ContactForm: React.FC = () => {
         confirmButtonColor: "#111827",
       });
     }
+    setIsSending(false);
   };
 
   return (
     <Box component="form" onSubmit={handleSubmit} sx={{ width: "100%" }}>
-      <Typography
-        variant="h6"
-        sx={{
-          fontWeight: 700,
-          mb: 2,
-          display: "flex",
-          alignItems: "center",
-          gap: 1,
-        }}
-      >
-        Nombre{" "}
-        <Typography component="span" sx={{ fontWeight: 400, fontSize: 12 }}>
-          (requerido)
-        </Typography>
-      </Typography>
-
       <div className="row mb-3">
         <div className="col-12 col-md-6 mb-3 mb-md-0">
           <Typography variant="body2" sx={{ fontWeight: 700, mb: 1 }}>
@@ -208,8 +215,9 @@ const ContactForm: React.FC = () => {
               boxShadow: "none",
               "&:hover": { backgroundColor: "#000" },
             }}
+            disabled={isSending}
           >
-            Enviar
+            {isSending ? "Enviando" : "Enviar"}
           </Button>
         </div>
       </div>
