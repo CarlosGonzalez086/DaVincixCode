@@ -1,5 +1,7 @@
 import React, { useState, type FormEvent } from "react";
 import { Box, TextField, Typography, Button } from "@mui/material";
+import { send } from "@emailjs/browser";
+import Swal from "sweetalert2";
 
 type FormState = {
   firstName: string;
@@ -47,10 +49,45 @@ const ContactForm: React.FC = () => {
     setForm((s) => ({ ...s, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("Enviar formulario:", form);
-    setForm({ firstName: "", lastName: "", email: "", message: "" });
+
+    try {
+      await send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          firstName: form.firstName,
+          lastName: form.lastName,
+          email: form.email,
+          message: form.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      Swal.fire({
+        icon: "success",
+        title: "Mensaje enviado",
+        text: "Gracias por contactarnos, te responderemos pronto.",
+        confirmButtonText: "Aceptar",
+        confirmButtonColor: "#111827",
+      });
+
+      setForm({
+        firstName: "",
+        lastName: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "No se pudo enviar el mensaje. Intenta más tarde.",
+        confirmButtonText: "Cerrar",
+        confirmButtonColor: "#111827",
+      });
+    }
   };
 
   return (

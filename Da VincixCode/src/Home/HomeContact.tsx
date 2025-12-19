@@ -11,9 +11,9 @@ const HomeContact = () => {
         <div className="contact-card animate__animated animate__fadeInUp p-4 w-50">
           <h2 className="alata-small">
             ¿Tienes preguntas o deseas obtener más información sobre nuestros <br />
-            servicios? ¡Ponte en contacto con nosotros! Estamos aquí para <br />
-            ayudarte con soluciones de software personalizadas que se adapten a <br />
-            las necesidades específicas de tu negocio. Contáctanos hoy mismo y <br />
+            servicios? ¡Ponte en contacto con nosotros! <br /> Estamos aquí para 
+            ayudarte con soluciones de software <br /> personalizadas que se adapten a 
+            las necesidades específicas de tu negocio. <br /> Contáctanos hoy mismo y 
             comencemos a construir el futuro juntos.
           </h2>
         </div>
