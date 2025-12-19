@@ -1,8 +1,9 @@
 import ContactForm from "./ContactForm";
+import "./HomeServicios.css"
 
 const HomeContact = () => {
   return (
-    <div className="home-servicios-bg p-5">
+    <div className="home-servicios-bg p-2">
       <h1 className="alata-bold text-center home-title animate__animated animate__fadeInDown">
         Contact Us
       </h1>

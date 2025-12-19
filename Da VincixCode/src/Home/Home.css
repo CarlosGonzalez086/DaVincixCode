@@ -1,8 +1,8 @@
 
 .home-bg {
-  background: linear-gradient(116deg, #8eb6dc 80%, #fafdff 100%);
+  background: linear-gradient(116deg, #5f8db8 80%, #fafdff 100%);
   width: 100vw;
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
 }
@@ -13,7 +13,7 @@
   font-family: 'Alata', 'Poppins', Arial, sans-serif;
   letter-spacing: 0.04em;
   margin-top: 3.3rem;
-  color: #1c355b;
+  color: #040b16;
   font-weight: 700;
   user-select: none;
 }
@@ -21,9 +21,7 @@
 
 .home-content-container {
   background: rgba(255,255,255,0.74);
-  border-radius: 2.3rem;
-  box-shadow: 0 8px 38px 10px #b1cfec40;
-  transition: box-shadow 0.3s;
+  border-radius: 2rem;
 }
 
 .home-content-container:hover {
@@ -51,7 +49,7 @@
 .home-main-img {
   width: 240px;
   height: 240px;
-  border-radius: 22%;
+  border-radius: 2rem;
   box-shadow: 0 4px 28px #a5bfd6;
   object-fit: cover;
   transition: transform 0.25s, box-shadow 0.4s;

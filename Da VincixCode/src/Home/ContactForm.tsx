@@ -10,7 +10,7 @@ type FormState = {
 
 const pillFieldSx = {
   "& .MuiOutlinedInput-root": {
-    borderRadius: 28,
+    borderRadius: 5,
     backgroundColor: "#f5f5f7",
     paddingRight: 0,
     "& fieldset": {
@@ -41,7 +41,9 @@ const ContactForm: React.FC = () => {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm((s) => ({ ...s, [e.target.name]: e.target.value }));
   };
 
@@ -55,12 +57,20 @@ const ContactForm: React.FC = () => {
     <Box component="form" onSubmit={handleSubmit} sx={{ width: "100%" }}>
       <Typography
         variant="h6"
-        sx={{ fontWeight: 700, mb: 2, display: "flex", alignItems: "center", gap: 1 }}
+        sx={{
+          fontWeight: 700,
+          mb: 2,
+          display: "flex",
+          alignItems: "center",
+          gap: 1,
+        }}
       >
-        Nombre <Typography component="span" sx={{ fontWeight: 400, fontSize: 12 }}>(requerido)</Typography>
+        Nombre{" "}
+        <Typography component="span" sx={{ fontWeight: 400, fontSize: 12 }}>
+          (requerido)
+        </Typography>
       </Typography>
 
-      {/* Bootstrap row/cols */}
       <div className="row mb-3">
         <div className="col-12 col-md-6 mb-3 mb-md-0">
           <Typography variant="body2" sx={{ fontWeight: 700, mb: 1 }}>
@@ -98,7 +108,10 @@ const ContactForm: React.FC = () => {
       <div className="row mb-3">
         <div className="col-12">
           <Typography variant="body2" sx={{ fontWeight: 700, mb: 1 }}>
-            Correo electrónico <Typography component="span" sx={{ fontWeight: 400, fontSize: 12 }}>(requerido)</Typography>
+            Correo electrónico{" "}
+            <Typography component="span" sx={{ fontWeight: 400, fontSize: 12 }}>
+              (requerido)
+            </Typography>
           </Typography>
           <TextField
             name="email"
@@ -116,7 +129,10 @@ const ContactForm: React.FC = () => {
       <div className="row mb-4">
         <div className="col-12">
           <Typography variant="body2" sx={{ fontWeight: 700, mb: 1 }}>
-            Mensaje <Typography component="span" sx={{ fontWeight: 400, fontSize: 12 }}>(requerido)</Typography>
+            Mensaje{" "}
+            <Typography component="span" sx={{ fontWeight: 400, fontSize: 12 }}>
+              (requerido)
+            </Typography>
           </Typography>
           <TextField
             name="message"
