@@ -2,28 +2,42 @@ import "./HomeAbout.css";
 
 const HomeAbout = () => {
   return (
-    <div className="home-about-bg p-2">
-      <h1 className="alata-bold text-center home-title animate__animated animate__fadeInDown">
-        Our brand vision
-      </h1>
-      <div className="d-flex justify-content-start align-items-center gap-5 mt-5 p-5">
-        <div className="servicio-card animate__animated animate__fadeInLeft align-items-center text-center">
-          <h2 className="alata-small mt-4 servicio-desc">
-            En DaVincixCode, nos comprometemos a transformar los negocios a
-            través de soluciones de software innovadoras. <br /> Nuestra visión es
-            empoderar a empresas de todos los tamaños para optimizar sus
-            operaciones, mejorar la productividad y lograr un crecimiento
-            sostenible. <br /> Creemos en el poder de la tecnología para simplificar
-            procesos complejos y proporcionar información en tiempo real que
-            impulse la toma de decisiones informadas. <br /> Nuestro objetivo es ser un
-            socio de confianza para nuestros clientes, ofreciendo soluciones
-            personalizadas que satisfagan sus necesidades únicas y les ayuden a
-            prosperar en un mercado competitivo.
-          </h2>
+    <section className="about-bg">
+      <div className="about-wrapper">
+        <header className="about-header animate__animated animate__fadeInDown">
+          <h1 className="about-title">Our Brand Vision</h1>
+          <p className="about-subtitle">
+            Tecnología con propósito. Software con impacto.
+          </p>
+        </header>
+
+        <div className="about-card animate__animated animate__fadeInUp">
+          <p>
+            En <strong>DaVincixCode</strong> transformamos negocios mediante
+            soluciones de software modernas, intuitivas y escalables.
+          </p>
+
+          <p>
+            Nuestra visión es empoderar a empresas de todos los tamaños para
+            optimizar sus operaciones, aumentar su productividad y crecer de
+            forma sostenible en un entorno digital en constante evolución.
+          </p>
+
+          <p>
+            Creemos en la tecnología como una herramienta para simplificar lo
+            complejo, ofrecer información en tiempo real y facilitar decisiones
+            estratégicas con total confianza.
+          </p>
+
+          <p className="about-highlight">
+            Más que proveedores, somos socios tecnológicos comprometidos con el
+            éxito de cada cliente.
+          </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export default HomeAbout;
+

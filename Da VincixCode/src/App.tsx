@@ -5,6 +5,7 @@ import HomeServicios from "./Home/HomeServicios";
 import HomeAbout from "./Home/HomeAbout";
 import HomeContact from "./Home/HomeContact";
 import HomeSocial from "./Home/HomeSocial";
+import HomeWorks from "./Home/HomeWorks";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
     >
       <Home />
       <HomeServicios />
+      <HomeWorks />
       <HomeAbout />
       <HomeContact />
       <HomeSocial />

@@ -1,0 +1,125 @@
+.works-bg {
+  padding: 6rem 1.5rem;
+  background: linear-gradient(135deg, #0f172a, #020617);
+}
+
+.works-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  color: #fff;
+}
+
+/* Header */
+.works-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.works-header h1 {
+  font-size: 2.6rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.works-header p {
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* Grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Card */
+.work-card {
+  padding: 2.8rem;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.45);
+}
+
+/* Text */
+.work-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.work-subtitle {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.work-description {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* Tags */
+.work-tags {
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.work-tag {
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.15);
+  opacity: 0.85;
+}
+
+/* Logo link */
+.work-logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.work-logo:hover {
+  transform: scale(1.06);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+.work-logo img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .works-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .work-card {
+    padding: 2.2rem;
+  }
+}

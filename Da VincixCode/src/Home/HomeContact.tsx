@@ -1,38 +1,44 @@
 import ContactForm from "./ContactForm";
-import "./HomeServicios.css";
+import "./HomeContact.css";
 
 const HomeContact = () => {
   return (
-    <div className="home-servicios-bg p-2 w-100">
-      <h1 className="alata-bold text-center home-title animate__animated animate__fadeInDown">
-        Contact Us
-      </h1>
+    <section className="contact-bg">
+      <div className="contact-wrapper">
+        <header className="contact-header animate__animated animate__fadeInDown">
+          <h1 className="contact-title">Contact Us</h1>
+          <p className="contact-subtitle">
+            Hablemos de tu próximo gran proyecto
+          </p>
+        </header>
 
-      <div className="mt-5 w-100">
-        <div className="row w-100 align-items-center">
-          {/* COLUMNA TEXTO */}
-          <div className="col-lg-5 col-md-6 col-sm-12 p-3">
-            <div className="h-100 d-flex align-items-center">
-              <h2 className="alata-small m-0">
-                ¿Tienes preguntas o deseas obtener más información sobre
-                nuestros servicios? ¡Ponte en contacto con nosotros! <br />
-                Estamos aquí para ayudarte con soluciones de software
-                personalizadas que se adapten a las necesidades específicas de
-                tu negocio. <br />
-                Contáctanos hoy mismo y comencemos a construir el futuro juntos.
+        <div className="row align-items-center contact-content">
+          {/* Texto */}
+          <div className="col-lg-5 col-md-6 col-sm-12">
+            <div className="contact-text animate__animated animate__fadeInLeft">
+              <h2>
+                ¿Listo para llevar tu negocio al siguiente nivel?
               </h2>
+              <p>
+                Escríbenos y descubre cómo nuestras soluciones de software
+                pueden ayudarte a optimizar procesos, escalar operaciones y
+                construir experiencias digitales memorables.
+              </p>
+              <p className="contact-highlight">
+                Creamos tecnología clara, eficiente y hecha a tu medida.
+              </p>
             </div>
           </div>
 
-          {/* COLUMNA FORM — PEGADA A LA DERECHA */}
-          <div className="col-lg-5 col-md-6 col-sm-12 ms-auto p-3">
-            <div className="d-flex justify-content-end">
+          {/* Formulario */}
+          <div className="col-lg-6 col-md-6 col-sm-12 ms-auto">
+            <div className="contact-form-container animate__animated animate__fadeInUp">
               <ContactForm />
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
